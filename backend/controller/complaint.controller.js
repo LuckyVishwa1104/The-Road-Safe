@@ -10,7 +10,7 @@ exports.raiseComplaint = async (req, res, next) => {
     }
     catch (error) {
         next(error);
-    }
+    }   
 } 
 
 exports.getComplaintDetails = async (req, res, next) => {
