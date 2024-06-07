@@ -17,42 +17,58 @@ export const Dashboard = () => {
   const [isHovered, setIsHovered] = useState(false);
 
 
+  // Fetch complaints from server
+  const fetchComplaints = async () => {
+    try {
+      const response = await axios.post(
+        `http://127.0.0.1:3000/bulk?filter=${filter}`
+      );
+      setData(response.data.success);
+    } catch (error) {
+      console.error("Error fetching complaints:", error);
+    }
+  };
+
   useEffect(() => {
-    const fetchBalance = async () => {
-      try {
-        const response = await axios.post(
-          `https://road-safe-backend.vercel.app/bulk?&filter=${filter}`
-        );
-        setData(response.data.success)
-      } catch (error) {
-        console.error("Error fetching balance:", error);
-      }
-    };
-    fetchBalance();
+    fetchComplaints();
   }, [filter]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (!token || token == 'undefined') {
+    if (!token || token === 'undefined') {
       navigate("/signin");
     } else {
       try {
-        console.log(token)
         const decodedToken = jwtDecode(token);
-        const adminName = decodedToken.firstName;
-        const adminLast = decodedToken.lastName;
-        console.log("Admin Name:", adminName);
-        setAdminName(adminName);
-        setAdminLast(adminLast);
+        setAdminName(decodedToken.firstName);
+        setAdminLast(decodedToken.lastName);
       } catch (error) {
         console.error("Error decoding token:", error);
       }
-    }  
+    }
   }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/home");
+  };
+
+  // Function to delete a complaint
+  const deleteComplaint = async (id) => {
+    try {
+      const response = await axios.post('http://127.0.0.1:3000/deleteComplaint', {
+        id: id,
+      });
+
+      if (response.status === 200) {
+        // Remove the deleted complaint from state
+        setData((prevData) => prevData.filter(complaint => complaint._id !== id));
+      } else {
+        console.error("Error deleting complaint:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error deleting complaint:", error);
+    }
   };
 
   return (
@@ -79,7 +95,7 @@ export const Dashboard = () => {
             onMouseLeave={() => setIsHovered(false)}>
             <FiLogOut size={24} />
             {isHovered && (
-              <span className="absolute transform -translate-x-1/2 -translate-y-full mt-28 px-2 py-1 ml-3 bg-black text-white text-sm rounded-md shadow-lg">
+              <span className="absolute transform -translate-x-1/2 -translate-y-full mt-28 px-2 py-1 ml-1.5 bg-black text-white text-sm rounded-md shadow-lg">
                 Logout
               </span>
             )}
@@ -102,6 +118,7 @@ export const Dashboard = () => {
                 image={complaint.objectUrl}
                 statusData={complaint.status}
                 email={complaint.email}
+                deleteComplaint={deleteComplaint}
               />
             </div>
           ))}

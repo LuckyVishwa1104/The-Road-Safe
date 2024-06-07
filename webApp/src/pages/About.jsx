@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Registered from "../images/Registered.png";
 import Resolved from "../images/Resolved.png";
 import Inprogress from "../images/Inprogress.png";
-import Cancelled from "../images/Cancelled.png";
 import axios from "axios";
 
 export const About = () => {
@@ -12,13 +11,12 @@ export const About = () => {
     { src: Registered, number: successData[0], name: 'Registered' },
     { src: Resolved, number: successData[1], name: 'Resolved' },
     { src: Inprogress, number: successData[2], name: 'Inprogress' },
-    { src: Cancelled, number: '2', name: 'Cancelled' }
   ];
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("https://road-safe-backend.vercel.app/getComplaintDetails");
+        const response = await axios.post("http://127.0.0.1:3000/getComplaintDetails");
         if (response.data.status) {
           setSuccessData(response.data.allCount);
           console.log(successData);

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { FaTrashAlt } from 'react-icons/fa';
 
-export const Card = ({ id, email, location, category, description, createdAt, updatedAt, image, statusData, count }) => {
+export const Card = ({ id, email, location, category, description, createdAt, updatedAt, image, statusData, count, deleteComplaint }) => {
   const [status, setStatus] = useState('Update Status');
   const [updateDate, setUpdateDate] = useState(updatedAt);
 
   useEffect(() => {
     const updateStatusInBackend = async () => {
       try {
-        const response = await fetch('https://road-safe-backend.vercel.app/updateStatus', {
+        const response = await fetch('http://127.0.0.1:3000/updateStatus', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -19,9 +20,7 @@ export const Card = ({ id, email, location, category, description, createdAt, up
         });
 
         const data = await response.json();
-
-        console.log("Updated Detail:", data.success.updatedAt);
-        setUpdateDate(data.success.updatedAt)
+        setUpdateDate(data.success.updatedAt);
       } catch (error) {
         console.error("Error updating complaint details:", error);
       }
@@ -36,11 +35,18 @@ export const Card = ({ id, email, location, category, description, createdAt, up
     setStatus(e.target.value);
   };
 
-
   return (
     <div style={{ padding: 10, display: "flex", flexDirection: "row", justifyContent: "flex-center", border: "2px", borderRadius: "5px", borderBlockColor: "#ffffff" }}>
       <div style={{ padding: 50, paddingLeft: 20, paddingRight: 20, paddingTop: 30, backgroundColor: "white", width: 340, background: "white", alignItems: "center", justifyContent: "center", borderRadius: "7px" }} className="shadow-md">
-        <h3 style={{ fontWeight: 'bold', backgroundColor: "#FFBF00", position: 'relative', padding: '10px', borderRadius: '7px' }}>Complaint no. - {count}</h3>
+        <div className="font-bold bg-yellow-400 relative p-3 rounded-lg flex justify-between items-center">
+          <span>Complaint no. - {count}</span>
+          <button
+            onClick={() => deleteComplaint(id)}
+            className="bg-transparent border-none cursor-pointer transform transition-transform duration-200 hover:scale-125 text-black hover:text-red-700"
+          >
+            <FaTrashAlt size={20} />
+          </button>
+        </div>
         <br></br>
         <img src={image} type="image" style={{ width: '300px', height: '180px', borderRadius: '7px' }} />
         <br></br>
