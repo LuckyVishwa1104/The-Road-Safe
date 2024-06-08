@@ -19,7 +19,6 @@ export const About = () => {
         const response = await axios.post("http://127.0.0.1:3000/getComplaintDetails");
         if (response.data.status) {
           setSuccessData(response.data.allCount);
-          console.log(successData);
         }
       } catch (error) {
         console.error("Error fetching data:", error);

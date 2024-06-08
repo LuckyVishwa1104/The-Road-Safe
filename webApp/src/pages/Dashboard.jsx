@@ -104,7 +104,6 @@ export const Dashboard = () => {
       </div>
       {data ? (
         <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center" }}>
-          {console.log(data)}
           {data.map((complaint, index) => (
             <div key={index}>
               <Card

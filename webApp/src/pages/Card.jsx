@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
+import Registered from "../images/galerySharp.png";
 
 export const Card = ({ id, email, location, category, description, createdAt, updatedAt, image, statusData, count, deleteComplaint }) => {
   const [status, setStatus] = useState('Update Status');
   const [updateDate, setUpdateDate] = useState(updatedAt);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const defaultImage = Registered;
 
   useEffect(() => {
     const updateStatusInBackend = async () => {
@@ -35,6 +39,10 @@ export const Card = ({ id, email, location, category, description, createdAt, up
     setStatus(e.target.value);
   };
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <div style={{ padding: 10, display: "flex", flexDirection: "row", justifyContent: "flex-center", border: "2px", borderRadius: "5px", borderBlockColor: "#ffffff" }}>
       <div style={{ padding: 50, paddingLeft: 20, paddingRight: 20, paddingTop: 30, backgroundColor: "white", width: 340, background: "white", alignItems: "center", justifyContent: "center", borderRadius: "7px" }} className="shadow-md">
@@ -48,7 +56,21 @@ export const Card = ({ id, email, location, category, description, createdAt, up
           </button>
         </div>
         <br></br>
-        <img src={image} type="image" style={{ width: '300px', height: '180px', borderRadius: '7px' }} />
+        <div className="relative w-full h-40">
+          {/* Show the default image until the actual image loads */}
+          <img
+            src={defaultImage}
+            alt="Loading"
+            className={`${imageLoaded ? 'hidden' : 'block animate-blink'}`} 
+            style={{ width: '300px', height: '180px', borderRadius: '7px' }}/>
+          <img
+            src={image}
+            alt="Complaint"
+            onLoad={handleImageLoad}
+            className={`${imageLoaded ? 'block' : 'hidden'}`}
+            style={{ width: '300px', height: '180px', borderRadius: '7px' }}
+          />
+        </div>
         <br></br>
         <h3>Email: {email}</h3>
         <p>Location: {location}</p>

@@ -16,7 +16,7 @@ export const Home = () => {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
-   
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;

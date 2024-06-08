@@ -21,12 +21,11 @@ export const Signin = () => {
             alert("Please enter correct credentials!");
         } else {
             setLoading(true); // Set loading to true when login starts
-            try { 
+            try {
                 const response = await axios.post("http://127.0.0.1:3000/login", {
                     email: username,
                     password: password
                 });
-                console.log(response)
                 localStorage.setItem("token", response.data.token);
                 navigate("/dashboard");
             } catch (error) {
