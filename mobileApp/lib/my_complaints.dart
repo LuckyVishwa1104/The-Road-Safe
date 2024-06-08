@@ -146,6 +146,25 @@ class _my_complaintState extends State<my_complaint> {
                                             width: 50,
                                             height: 150,
                                             fit: BoxFit.cover,
+                                            loadingBuilder:
+                                                (BuildContext context,
+                                                    Widget child,
+                                                    ImageChunkEvent?
+                                                        loadingProgress) {
+                                              if (loadingProgress == null) {
+                                                return child;
+                                              } else {
+                                                // Display a default image with blinking effect
+                                                return SizedBox(
+                                                  width: 50,
+                                                  height: 150,
+                                                  child: Image.asset(
+                                                    'assets/images/galerySharp.png', // Path to your default image asset
+                                                  
+                                                  ),
+                                                );
+                                              }
+                                            },
                                           ),
                                         ),
 
@@ -198,13 +217,12 @@ class _my_complaintState extends State<my_complaint> {
                                                     BorderRadius.circular(
                                                         10), // Add border radius
                                               ),
-                                              // isComplaintRaised ? 'Complaint raised!' : 'No complaint raised',
                                               child: Text(
                                                 ("${items![reverseIndex]['status']}" ==
                                                         'Update Status')
                                                     ? "Complaint raised!"
                                                     : "${items![reverseIndex]['status']}",
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     color: Colors.black),
                                               ),
                                             ),
