@@ -6,13 +6,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const Contact = () => {
 
-  const [isBlinking, setIsBlinking] = useState(false);
+  const [isBlinkingA, setIsBlinkingA] = useState(false);
 
   const handleClick = (e) => {
-    setIsBlinking(true);
+    setIsBlinkingA(true);
 
     setTimeout(() => {
-      setIsBlinking(false);
+      setIsBlinkingA(false);
     }, 500);
 
   };
@@ -92,7 +92,7 @@ export const Contact = () => {
           <button
             type="submit"
             onClick={handleClick}
-            className={`bg-blue-500 hover:transform hover:scale-110 transition duration-300 ease-in-out text-white py-2 px-4 rounded transition-all ${isBlinking ? 'animate-blink bg-blue-500' : 'animate-blink bg-green-500'}`}
+            className={`bg-blue-500 hover:transform hover:scale-110 transition duration-300 ease-in-out text-white py-2 px-4 rounded transition-all ${isBlinkingA ? 'bg-blue-500' : 'bg-green-500'}`}
           >Send</button>
         </form>
       </div>

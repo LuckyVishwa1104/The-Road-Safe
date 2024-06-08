@@ -61,8 +61,8 @@ export const Card = ({ id, email, location, category, description, createdAt, up
           <img
             src={defaultImage}
             alt="Loading"
-            className={`${imageLoaded ? 'hidden' : 'block animate-blink'}`} 
-            style={{ width: '300px', height: '180px', borderRadius: '7px' }}/>
+            className={`${imageLoaded ? 'hidden' : 'block animate-blink'}`}
+            style={{ width: '300px', height: '180px', borderRadius: '7px' }} />
           <img
             src={image}
             alt="Complaint"
