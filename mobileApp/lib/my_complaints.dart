@@ -135,7 +135,7 @@ class _my_complaintState extends State<my_complaint> {
                                       ],
                                     ),
                                     child: Card(
-                                      // borderOnForeground: false,
+                              
                                       child: ListTile(
                                         // leading: Icon(Icons.task),
                                         title: ClipRRect(
@@ -146,25 +146,7 @@ class _my_complaintState extends State<my_complaint> {
                                             width: 50,
                                             height: 150,
                                             fit: BoxFit.cover,
-                                            loadingBuilder:
-                                                (BuildContext context,
-                                                    Widget child,
-                                                    ImageChunkEvent?
-                                                        loadingProgress) {
-                                              if (loadingProgress == null) {
-                                                return child;
-                                              } else {
-                                                // Display a default image with blinking effect
-                                                return SizedBox(
-                                                  width: 50,
-                                                  height: 150,
-                                                  child: Image.asset(
-                                                    'assets/images/galerySharp.png', // Path to your default image asset
-                                                  
-                                                  ),
-                                                );
-                                              }
-                                            },
+                                          
                                           ),
                                         ),
 
