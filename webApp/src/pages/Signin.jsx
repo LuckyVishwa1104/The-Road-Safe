@@ -14,7 +14,8 @@ export const Signin = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    // https://road-backend.vercel.app/login - for remote server
+    // https://the-road-safe-backend.vercel.app/login - for remote server
+    // http://127.0.0.1:3000/ - for local server
 
     const handleLogin = async () => {
         if (password.length < 3) {
@@ -22,7 +23,7 @@ export const Signin = () => {
         } else {
             setLoading(true); // Set loading to true when login starts
             try {
-                const response = await axios.post("http://127.0.0.1:3000/login", {
+                const response = await axios.post("https://the-road-safe-backend.vercel.app/login", {
                     email: username,
                     password: password
                 });

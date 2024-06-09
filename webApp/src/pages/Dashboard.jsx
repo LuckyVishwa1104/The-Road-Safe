@@ -21,7 +21,7 @@ export const Dashboard = () => {
   const fetchComplaints = async () => {
     try {
       const response = await axios.post(
-        `http://127.0.0.1:3000/bulk?filter=${filter}`
+        `https://the-road-safe-backend.vercel.app/bulk?filter=${filter}`
       );
       setData(response.data.success);
     } catch (error) {
@@ -56,7 +56,7 @@ export const Dashboard = () => {
   // Function to delete a complaint
   const deleteComplaint = async (id) => {
     try {
-      const response = await axios.post('http://127.0.0.1:3000/deleteComplaint', {
+      const response = await axios.post('https://the-road-safe-backend.vercel.app/deleteComplaint', {
         id: id,
       });
 

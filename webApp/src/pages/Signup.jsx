@@ -19,7 +19,7 @@ export const Signup = () => {
     const handleSignup = async () => {
         setLoading(true);
         try {
-            const response = await axios.post("http://127.0.0.1:3000/registration", {
+            const response = await axios.post("https://the-road-safe-backend.vercel.app/registration", {
                 firstName,
                 lastName,
                 email: username,

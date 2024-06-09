@@ -12,7 +12,7 @@ export const Card = ({ id, email, location, category, description, createdAt, up
   useEffect(() => {
     const updateStatusInBackend = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:3000/updateStatus', {
+        const response = await fetch('https://the-road-safe-backend.vercel.app/updateStatus', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

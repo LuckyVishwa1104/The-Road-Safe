@@ -1,5 +1,4 @@
 // for remote server
-// final url = 'https://road-backend.vercel.app/';
 final url = 'https://the-road-safe-backend.vercel.app/';
 
 // for local server
