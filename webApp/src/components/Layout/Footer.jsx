@@ -32,7 +32,7 @@ export const Footer = () => {
       <div className="text-left">
         
         <h3><span className="font-bold">Call</span> - 1800-00-0000</h3>
-        <h3><span className="font-bold">App</span> - Download Now</h3>
+        <h3><span className="font-bold">App</span> - <a href="https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv" target="blank">Download Now</a></h3>
         <h3><span className="font-bold">Mail</span> - help@roadsafe.com</h3>
       </div>
     </div>

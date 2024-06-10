@@ -64,7 +64,7 @@ export const Contact = () => {
               <h4 className="text-sm mt-1">1800-00-0000</h4>
             </div></a>
 
-          <a href={`mailto:luckyvishwa1104@gmail`} target="blank">
+          <a href='https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv' target="blank">
             <div className="border border-gray-300 rounded-lg p-4 flex flex-col items-center h-32 w-56 mb-2 hover:transform hover:scale-110 transition duration-300 ease-in-out">
               <FaDownload size={24} className="text-yellow-500" />
               <h3 className="text-lg mt-2">Get our app</h3>
