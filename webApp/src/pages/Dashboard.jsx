@@ -74,7 +74,7 @@ export const Dashboard = () => {
   return (
     <div className="bg-blue-200/20">
       <div id="navbar" className="mb-5 shadow-lg shadow-gray-300/50  flex justify-between rounded-md sticky top-0 bg-white z-10">
-        <div className="flex flex-row justify-center h-full ml-4 ">
+        <div className="flex flex-row justify-center h-full ml-2 ">
           <div className="mt-3.5  ">
             <input onChange={(e) => {
               setFilter(e.target.value)
@@ -95,7 +95,7 @@ export const Dashboard = () => {
             onMouseLeave={() => setIsHovered(false)}>
             <FiLogOut size={24} />
             {isHovered && (
-              <span className="absolute transform -translate-x-1/2 -translate-y-full mt-28 px-2 py-1 ml-1.5 bg-black text-white text-sm rounded-md shadow-lg">
+              <span className="absolute transform -translate-x-1/2 -translate-y-full mt-28 px-2 py-1 ml-0.5 bg-black text-white text-sm rounded-md shadow-lg">
                 Logout
               </span>
             )}
