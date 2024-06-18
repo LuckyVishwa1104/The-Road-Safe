@@ -3,8 +3,13 @@ import emailjs from '@emailjs/browser';
 import { FaEnvelope, FaPhone, FaDownload } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AiFillGoogleCircle, AiFillApple } from 'react-icons/ai';
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { FaAppStoreIos } from "react-icons/fa";
 
 export const Contact = () => {
+
+  const [isHovered, setIsHovered] = useState(false);
 
   const [isBlinkingA, setIsBlinkingA] = useState(false);
 
@@ -64,12 +69,40 @@ export const Contact = () => {
               <h4 className="text-sm mt-1">1800-00-0000</h4>
             </div></a>
 
-          <a href='https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv' target="blank">
-            <div className="border border-gray-300 rounded-lg p-4 flex flex-col items-center h-32 w-56 mb-2 hover:transform hover:scale-110 transition duration-300 ease-in-out">
-              <FaDownload size={24} className="text-yellow-500" />
-              <h3 className="text-lg mt-2">Get our app</h3>
-              <h4 className="text-sm mt-1">Download Now</h4>
-            </div></a>
+
+          <div
+            className="border border-gray-300 rounded-lg p-4 flex flex-col items-center h-32 w-56 mb-2 hover:transform hover:scale-110 transition duration-300 ease-in-out"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <FaDownload size={24} className="text-yellow-500" />
+            <h3 className="text-lg mt-2">Get our app</h3>
+            <h4 className="text-sm mt-1">Download Now</h4>
+
+            {isHovered && (
+              <div className="flex space-x-4 mt-2">
+                <a
+                  href="https://play.google.com/store"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center text-center"
+                >
+                  <IoLogoGooglePlaystore size={32} className="text-yellow-500" />
+                  {/* <span className="text-xs">Play Store</span> */}
+                </a>
+                <a
+                  href="https://www.apple.com/app-store/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center text-center"
+                >
+                  <FaAppStoreIos size={32} className="text-black" />
+                  {/* <span className="text-xs">App Store</span> */}
+                </a>
+              </div>
+            )}
+          </div>
+          {/* <a href='https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv' target="blank"></a> */}
         </div>
       </div>
 
