@@ -82,22 +82,21 @@ export const Contact = () => {
             {isHovered && (
               <div className="flex space-x-4 mt-2">
                 <a
-                  href="https://play.google.com/store"
+                  // https://drive.google.com/file/d/1sEU4bvkMhGQkzwFHhGEWJIk8aejKkZRU/view?usp=sharing
+                  href='https://drive.google.com/uc?export=download&id=1sEU4bvkMhGQkzwFHhGEWJIk8aejKkZRU'
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center text-center"
                 >
                   <IoLogoGooglePlaystore size={32} className="text-yellow-500" />
-                  {/* <span className="text-xs">Play Store</span> */}
                 </a>
                 <a
-                  href="https://www.apple.com/app-store/"
+                  href='https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv'
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center text-center"
                 >
                   <FaAppStoreIos size={32} className="text-black" />
-                  {/* <span className="text-xs">App Store</span> */}
                 </a>
               </div>
             )}

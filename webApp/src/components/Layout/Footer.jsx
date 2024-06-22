@@ -37,10 +37,10 @@ export const Footer = () => {
         <h3><span className="font-medium">Mail</span> - help@roadsafe.com</h3>
         <h3 className="font-medium">Get our App</h3>
         <div className="flex space-x-4 mt-1">
-          <a href="" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+          <a href='https://drive.google.com/uc?export=download&id=1sEU4bvkMhGQkzwFHhGEWJIk8aejKkZRU' target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
             <IoLogoGooglePlaystore size={32} className="text-black hover:transform hover:scale-110 transition duration-300 ease-in-out" />
           </a>
-          <a href="" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+          <a href='https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv' target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
             <FaAppStoreIos size={32} className="text-black hover:transform hover:scale-110 transition duration-300 ease-in-out" />
           </a>
         </div>
