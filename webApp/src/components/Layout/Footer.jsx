@@ -40,11 +40,10 @@ export const Footer = () => {
           <a href='https://drive.google.com/uc?export=download&id=1sEU4bvkMhGQkzwFHhGEWJIk8aejKkZRU' target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
             <IoLogoGooglePlaystore size={32} className="text-black hover:transform hover:scale-110 transition duration-300 ease-in-out" />
           </a>
-          <a href='https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv' target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+          <a href='https://drive.google.com/uc?export=download&id=1jevyxMtub45UjPzDmmT7giI1TOwwpYeN' target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
             <FaAppStoreIos size={32} className="text-black hover:transform hover:scale-110 transition duration-300 ease-in-out" />
           </a>
         </div>
-        {/* <a href="https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv" target="blank"></a> */}
       </div>
     </div>
 

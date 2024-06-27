@@ -82,7 +82,6 @@ export const Contact = () => {
             {isHovered && (
               <div className="flex space-x-4 mt-2">
                 <a
-                  // https://drive.google.com/file/d/1sEU4bvkMhGQkzwFHhGEWJIk8aejKkZRU/view?usp=sharing
                   href='https://drive.google.com/uc?export=download&id=1sEU4bvkMhGQkzwFHhGEWJIk8aejKkZRU'
                   target="_blank"
                   rel="noopener noreferrer"
@@ -91,7 +90,7 @@ export const Contact = () => {
                   <IoLogoGooglePlaystore size={32} className="text-yellow-500" />
                 </a>
                 <a
-                  href='https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv'
+                  href='https://drive.google.com/uc?export=download&id=1jevyxMtub45UjPzDmmT7giI1TOwwpYeN'
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center text-center"
@@ -101,7 +100,6 @@ export const Contact = () => {
               </div>
             )}
           </div>
-          {/* <a href='https://drive.google.com/uc?export=download&id=10l7p8rLa9fi6l1qMNPchVslq0XFVq2vv' target="blank"></a> */}
         </div>
       </div>
 
