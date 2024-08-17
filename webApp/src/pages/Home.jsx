@@ -6,6 +6,8 @@ import { Services } from "./Services.jsx";
 import { Team } from "./Team.jsx";
 import { Contact } from "./Contact.jsx";
 import Footer from "../components/Layout/Footer.jsx";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { FaAppStoreIos } from "react-icons/fa";
 
 export const Home = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -86,7 +88,7 @@ export const Home = () => {
             padding: "0 20px",
           }}
         >
-          <div className="headerContainer p-7 pt-20">
+          <div className="headerContainer p-20 pt-20">
             <h3 className="text-5xl text-white">Welcome to</h3>
             <h1 className="text-5xl text-white font-bold">ROADSAFE</h1>
             <div
@@ -135,6 +137,37 @@ export const Home = () => {
                 </button>
               </Link>
             </div>
+            <br></br>
+            <h3 className="text-4xl text-white">Get our App</h3>
+            <div className="flex space-x-4 mt-3">
+              <a
+                href='https://drive.google.com/uc?export=download&id=1sEU4bvkMhGQkzwFHhGEWJIk8aejKkZRU'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2"
+              >
+                <div className="bg-gray-200 p-2 rounded-lg">
+                  <IoLogoGooglePlaystore
+                    size={32}
+                    className="text-black hover:transform hover:scale-110 transition duration-300 ease-in-out"
+                  />
+                </div>
+              </a>
+              <a
+                href='https://drive.google.com/uc?export=download&id=1jevyxMtub45UjPzDmmT7giI1TOwwpYeN'
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2"
+              >
+                <div className="bg-gray-200 p-2 rounded-lg">
+                  <FaAppStoreIos
+                    size={32}
+                    className="text-black hover:transform hover:scale-110 transition duration-300 ease-in-out"
+                  />
+                </div>
+              </a>
+            </div>
+
           </div>
         </div>
 
